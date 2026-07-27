@@ -20,7 +20,7 @@ function Navbar() {
       <nav className="navbar__links">
         <a href="#resume">Resume</a>
         <span className="divider">|</span>
-        <a href="/projects">Projects</a>
+        <a href="#projects">Projects</a>
         <span className="divider">|</span>
         <a href="#skills">Skills</a>
         <span className="divider">|</span>
@@ -59,7 +59,7 @@ function Hero() {
           <a href="#resume" className="pill pill--orange">
             Resume
           </a>
-          <a href="/projects" className="pill pill--red">
+          <a href="#projects" className="pill pill--red">
             Projects
           </a>
           <a href="#contact" className="pill pill--cyan">

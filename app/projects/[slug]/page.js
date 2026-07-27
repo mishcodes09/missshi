@@ -36,7 +36,7 @@ function FallbackProjectPage({ project }) {
 
   return (
     <article className={styles.page}>
-      <Link href="/projects" className={styles.back}>
+      <Link href="/#projects" className={styles.back}>
         ← Back to Projects
       </Link>
 
