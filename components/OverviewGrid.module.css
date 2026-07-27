@@ -1,0 +1,76 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.label {
+  padding-top: 3px;
+  color: #9f8954;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.value {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.primary {
+  color: #14161c;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.body {
+  color: #2b2f38;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.pillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.pill {
+  padding: 5px 14px;
+  border: 1px solid rgba(127, 224, 230, 0.6);
+  border-radius: 999px;
+  background-color: rgba(127, 224, 230, 0.25);
+  color: #14161c;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.statusLive { background-color: #22c55e; }
+.statusProgress { background-color: #f5a623; }
+.statusDefault { background-color: #f24b3f; }
+
+@media (max-width: 560px) {
+  .row { grid-template-columns: 1fr; gap: 6px; }
+}

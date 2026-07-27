@@ -1,0 +1,118 @@
+.page {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 0 120px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 56px;
+  color: #9a9da5;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.back:hover { color: #f5a623; }
+
+.header {
+  max-width: 860px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 14px;
+  color: #14161c;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.tagline {
+  color: #747983;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.heroImageWrap {
+  width: min(100%, 1060px);
+  aspect-ratio: 16 / 8;
+  margin: 0 auto 48px;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: #e9e9ea;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallbackBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(100%, 1060px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.comingSoon {
+  color: #9a9da5;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.linkPill {
+  padding: 11px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  color: #14161c;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.linkPill:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+
+.linkPillLive { background-color: #f5a623; }
+.linkPillRepo { background-color: #7fe0e6; }
+.linkPillFigma { background-color: #c9bbf0; }
+
+.linkPillDisabled {
+  border-color: rgba(0, 0, 0, 0.06);
+  background-color: #e9e9ea;
+  color: #9a9da5;
+  cursor: not-allowed;
+}
+
+.linkPillDisabled:hover { box-shadow: none; transform: none; }
+
+@media (max-width: 800px) {
+  .page { width: 100%; padding: 36px 28px 88px; }
+  .back { margin-bottom: 42px; }
+  .header { margin-bottom: 30px; }
+  .heroImageWrap { margin-bottom: 36px; }
+}
+
+@media (max-width: 560px) {
+  .page { padding: 28px 20px 72px; }
+  .back { margin-bottom: 34px; }
+  .heroImageWrap { aspect-ratio: 4 / 3; border-radius: 16px; }
+}

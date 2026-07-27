@@ -1,0 +1,221 @@
+.page {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 0 140px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 56px;
+  color: #9a9da5;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.back:hover { color: #f5a623; }
+
+.hero { scroll-margin-top: 32px; }
+
+.heroImageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  margin: 0 0 40px;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: #e9e9ea;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.title {
+  color: #14161c;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.years {
+  color: #9a9da5;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tagline {
+  max-width: 720px;
+  color: #747983;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  margin-bottom: 64px;
+}
+
+.contentLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: clamp(40px, 8vw, 112px);
+  align-items: start;
+}
+
+.mainContent {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.section { scroll-margin-top: 32px; }
+
+.sectionHeading {
+  margin: 0 0 24px;
+  color: #14161c;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.subHeading {
+  margin: 0 0 8px;
+  color: #14161c;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.subBlock {
+  margin-top: 24px;
+}
+
+.content {
+  color: #2b2f38;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.metaList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.metaRow {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.metaLabel {
+  color: #9f8954;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.metaValue {
+  color: #14161c;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.designSystemImageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 32px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #e9e9ea;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.designSystemImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visualDesignGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 40px;
+}
+
+.bulletList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px;
+  color: #2b2f38;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.linkPill {
+  padding: 11px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  color: #14161c;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.linkPill:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+}
+
+.linkPillLive { background-color: #f5a623; }
+.linkPillRepo { background-color: #7fe0e6; }
+.linkPillFigma { background-color: #c9bbf0; }
+
+.sidebar { min-width: 0; }
+
+@media (max-width: 900px) {
+  .page { width: 100%; padding: 36px 28px 120px; }
+  .back { margin-bottom: 42px; }
+  .heroImageWrap { margin-bottom: 32px; }
+  .tagline { margin-bottom: 48px; }
+  .contentLayout { display: flex; flex-direction: column; gap: 0; }
+  .mainContent { width: 100%; gap: 56px; }
+  .visualDesignGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .page { padding: 28px 20px 120px; }
+  .back { margin-bottom: 34px; }
+  .heroImageWrap { aspect-ratio: 4 / 3; border-radius: 16px; }
+  .metaRow { grid-template-columns: 1fr; gap: 4px; }
+}
