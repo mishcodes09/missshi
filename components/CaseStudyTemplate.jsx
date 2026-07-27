@@ -4,8 +4,20 @@ import OverviewGrid from "./OverviewGrid";
 import IconTextList from "./IconTextList";
 import FeatureBlock from "./FeatureBlock";
 import ImageGrid from "./ImageGrid";
+import ZoomableImage from "./ZoomableImage";
 import PrototypeCTA from "./PrototypeCTA";
 import CaseStudyContents from "./CaseStudyContents";
+import InterviewMockup from "./InterviewMockup";
+
+function Paragraphs({ text }) {
+  const paragraphs = Array.isArray(text)
+    ? text
+    : text.split(/\n\s*\n/);
+
+  return paragraphs.filter(Boolean).map((paragraph, index) => (
+    <p key={index} className={styles.content}>{paragraph}</p>
+  ));
+}
 
 export default function CaseStudyTemplate({ project }) {
   const { title, tagline, category, liveUrl, repoUrl, figmaUrl } = project;
@@ -39,6 +51,19 @@ export default function CaseStudyTemplate({ project }) {
     reflections && { id: "reflections", label: "Reflections" },
   ].filter(Boolean);
 
+  const researchMethods = research?.methods?.length > 0
+    ? research.methods
+    : [
+        research?.marketInsights && {
+          heading: "Market Insights & Competitor Analysis",
+          body: research.marketInsights,
+        },
+        research?.usabilityInterviews?.length > 0 && {
+          heading: "Usability Interviews",
+          findings: research.usabilityInterviews,
+        },
+      ].filter(Boolean);
+
   return (
     <article className={styles.page}>
       <Link href="/#projects" className={styles.back}>
@@ -46,16 +71,19 @@ export default function CaseStudyTemplate({ project }) {
       </Link>
 
       <section id="top" className={styles.hero}>
-        {heroImage && (
-          <div className={styles.heroImageWrap}>
-            <img src={heroImage} alt={title} className={styles.heroImage} />
-          </div>
-        )}
         <header className={styles.header}>
           <h1 className={styles.title}>{title}</h1>
           {years && <p className={styles.years}>{years}</p>}
         </header>
         {tagline && <p className={styles.tagline}>{tagline}</p>}
+        {heroImage && (
+          <ZoomableImage
+            src={heroImage}
+            alt={title}
+            wrapClassName={styles.heroImageWrap}
+            className={styles.heroImage}
+          />
+        )}
       </section>
 
       <div className={styles.contentLayout}>
@@ -95,7 +123,7 @@ export default function CaseStudyTemplate({ project }) {
           {challenge && (
             <section id="challenge" className={styles.section}>
               <h2 className={styles.sectionHeading}>The Challenge</h2>
-              {challenge.problemFraming && <p className={styles.content}>{challenge.problemFraming}</p>}
+              {challenge.problemFraming && <Paragraphs text={challenge.problemFraming} />}
               <IconTextList items={challenge.pinpointingIssues} />
             </section>
           )}
@@ -110,9 +138,21 @@ export default function CaseStudyTemplate({ project }) {
 
           {research && (
             <section id="research" className={styles.section}>
-              <h2 className={styles.sectionHeading}>Research</h2>
-              {research.marketInsights && <p className={styles.content}>{research.marketInsights}</p>}
-              <IconTextList items={research.usabilityInterviews} />
+              <h2 className={styles.sectionHeading}>Research Summary</h2>
+              {research.intro && <Paragraphs text={research.intro} />}
+              <div className={styles.researchMethods}>
+                {researchMethods.map((method) => (
+                  <section key={method.heading} className={styles.researchMethod}>
+                    <h3 className={styles.subHeading}>{method.heading}</h3>
+                    {method.body && <Paragraphs text={method.body} />}
+                    {method.images?.length > 0 && (
+                      <ImageGrid images={method.images} alt={`${method.heading} research`} />
+                    )}
+                    <InterviewMockup messages={method.conversation} />
+                    <IconTextList items={method.findings} />
+                  </section>
+                ))}
+              </div>
             </section>
           )}
 
@@ -166,9 +206,12 @@ export default function CaseStudyTemplate({ project }) {
             <section id="visualdesign" className={styles.section}>
               <h2 className={styles.sectionHeading}>Visual Design</h2>
               {visualDesign.designSystemImage && (
-                <div className={styles.designSystemImageWrap}>
-                  <img src={visualDesign.designSystemImage} alt="Design system" className={styles.designSystemImage} />
-                </div>
+                <ZoomableImage
+                  src={visualDesign.designSystemImage}
+                  alt="Design system"
+                  wrapClassName={styles.designSystemImageWrap}
+                  className={styles.designSystemImage}
+                />
               )}
               <div className={styles.visualDesignGrid}>
                 {visualDesign.typography && (

@@ -95,11 +95,23 @@
   color: #14161c;
   font-family: "Instrument Serif", serif;
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .subBlock {
   margin-top: 24px;
+}
+
+.researchMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.researchMethod {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .content {
@@ -201,7 +213,12 @@
 .linkPillRepo { background-color: #7fe0e6; }
 .linkPillFigma { background-color: #c9bbf0; }
 
-.sidebar { min-width: 0; }
+.sidebar {
+  position: sticky;
+  top: 32px;
+  align-self: start;
+  min-width: 0;
+}
 
 @media (max-width: 900px) {
   .page { width: 100%; padding: 36px 28px 120px; }
@@ -210,6 +227,7 @@
   .tagline { margin-bottom: 48px; }
   .contentLayout { display: flex; flex-direction: column; gap: 0; }
   .mainContent { width: 100%; gap: 56px; }
+  .sidebar { position: static; width: 100%; }
   .visualDesignGrid { grid-template-columns: 1fr; }
 }
 

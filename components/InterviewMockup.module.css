@@ -1,0 +1,130 @@
+.mockup {
+  width: min(100%, 680px);
+  margin: 12px auto 20px;
+  padding: 0;
+  background: linear-gradient(180deg, #fbfbfd 0%, #f2f2f6 100%);
+  border: 1px solid #e4e4ea;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(20, 22, 28, 0.04), 0 12px 28px -12px rgba(20, 22, 28, 0.18);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaef;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #9a9ea8, #6e727c);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.contactName {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #14161c;
+}
+
+.contactSubtitle {
+  font-size: 0.72rem;
+  color: #8a8e98;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px clamp(16px, 5vw, 28px) 8px;
+  background: #f6f6f9;
+}
+
+.messageRow { display: flex; }
+.messageRow.lastInGroup { margin-bottom: 10px; }
+.question { justify-content: flex-end; }
+.reply { justify-content: flex-start; }
+
+.bubble {
+  position: relative;
+  max-width: min(80%, 420px);
+  padding: 9px 15px 10px;
+  border-radius: 18px;
+  color: #14161c;
+  background: #e9e9eb;
+  font-size: 0.93rem;
+  line-height: 1.42;
+  box-shadow: 0 1px 0 rgba(20, 22, 28, 0.03);
+}
+
+.question .bubble {
+  color: #ffffff;
+  background: linear-gradient(180deg, #3aa4ff, #2f8ff0);
+}
+
+/* Tail only on the last bubble of a consecutive run: flatten the corner it grows from, then attach a triangular nub */
+.reply.lastInGroup .bubble {
+  border-bottom-left-radius: 4px;
+}
+
+.question.lastInGroup .bubble {
+  border-bottom-right-radius: 4px;
+}
+
+.lastInGroup .bubble::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 11px;
+  height: 13px;
+}
+
+.reply.lastInGroup .bubble::after {
+  left: -10px;
+  background: #e9e9eb;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.question.lastInGroup .bubble::after {
+  right: -10px;
+  background: #2f8ff0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.delivered {
+  align-self: flex-end;
+  margin: 2px 2px 10px;
+  color: #9a9ea8;
+  font-size: 0.7rem;
+}
+
+.caption {
+  margin: 0;
+  padding: 10px 16px 16px;
+  color: #8a8e98;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .messages { padding: 16px 14px 8px; }
+  .bubble { max-width: 88%; font-size: 0.9rem; }
+}

@@ -47,9 +47,9 @@
 
 .pill {
   padding: 5px 14px;
-  border: 1px solid rgba(127, 224, 230, 0.6);
-  border-radius: 999px;
-  background-color: rgba(127, 224, 230, 0.25);
+  border: 1px solid #000000;
+  border-radius: 0;
+  background-color: #ffffff;
   color: #14161c;
   font-size: 0.8rem;
   font-weight: 600;

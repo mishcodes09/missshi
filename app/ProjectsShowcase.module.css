@@ -11,8 +11,8 @@
   font-size: 0.9rem;
   color: #9a9da5;
   background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 999px;
+  border: 1px solid #000000;
+  border-radius: 0;
   padding: 10px 22px;
   cursor: pointer;
   transition:
@@ -23,13 +23,13 @@
 
 .filterButton:hover {
   color: #14161c;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: #000000;
 }
 
 .filterButtonActive {
   color: #14161c;
   background-color: #7fe0e6;
-  border-color: rgba(127, 224, 230, 0.6);
+  border-color: #000000;
 }
 
 .filterButtonActive:hover {

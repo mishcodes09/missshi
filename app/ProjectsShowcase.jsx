@@ -6,18 +6,16 @@ import projects from "../data/projects";
 import styles from "./ProjectsShowcase.module.css";
 
 const FILTERS = [
-  { key: "all", label: "All" },
-  { key: "development", label: "Coding" },
-  { key: "design", label: "UI/UX" },
+  { key: "development", label: "Code" },
+  { key: "design", label: "Design" },
 ];
 
 export default function ProjectsShowcase() {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("development");
 
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : projects.filter((project) => project.category === filter);
+  const filteredProjects = projects.filter(
+    (project) => project.category === filter
+  );
 
   return (
     <section

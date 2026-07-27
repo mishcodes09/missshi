@@ -1,3 +1,4 @@
+import ZoomableImage from "./ZoomableImage";
 import styles from "./ImageGrid.module.css";
 
 export default function ImageGrid({ images, alt }) {
@@ -6,9 +7,13 @@ export default function ImageGrid({ images, alt }) {
   return (
     <div className={styles.grid}>
       {images.map((src, i) => (
-        <div key={src + i} className={styles.imageWrap}>
-          <img src={src} alt={alt ? `${alt} ${i + 1}` : ""} className={styles.image} />
-        </div>
+        <ZoomableImage
+          key={src + i}
+          src={src}
+          alt={alt ? `${alt} ${i + 1}` : ""}
+          wrapClassName={styles.imageWrap}
+          className={styles.image}
+        />
       ))}
     </div>
   );
