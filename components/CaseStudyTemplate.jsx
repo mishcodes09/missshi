@@ -180,12 +180,21 @@ export default function CaseStudyTemplate({ project }) {
                 <div className={styles.subBlock}>
                   <h3 className={styles.subHeading}>Wireframing</h3>
                   <p className={styles.content}>{designProcess.wireframing}</p>
+                  {designProcess.wireframingImages?.[0] && (
+                    <ImageGrid images={[designProcess.wireframingImages[0]]} alt="Wireframing" />
+                  )}
+                  {designProcess.wireframingImages?.length > 1 && (
+                    <ImageGrid images={designProcess.wireframingImages.slice(1)} alt="Wireframing detail" />
+                  )}
                 </div>
               )}
               {designProcess.explorations && (
                 <div className={styles.subBlock}>
                   <h3 className={styles.subHeading}>Explorations</h3>
                   <p className={styles.content}>{designProcess.explorations}</p>
+                  {designProcess.explorationsImages?.length > 0 && (
+                    <ImageGrid images={designProcess.explorationsImages} alt="Explorations" />
+                  )}
                 </div>
               )}
             </section>

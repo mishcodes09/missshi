@@ -183,7 +183,7 @@ const projects = [
       },
 
       designProcess: {
-        tools: "Figma, FigJam",
+        tools: "Figma, Pinterest, Procreate ",
         designReview: "Placeholder: how design reviews were run and with whom.",
         ideation: [
           {
@@ -195,26 +195,33 @@ const projects = [
             text: "Placeholder: sorting and prioritizing ideas with the team.",
           },
         ],
-        wireframing: "Placeholder: description of the wireframing phase.",
-        explorations: "Placeholder: description of visual design explorations.",
+        wireframing:
+          "I focused on designing a journey planner that lets users search their starting point and destination instead of manually browsing routes.",
+        wireframingImages: [
+          "/projects/wireframes.png",
+          "/projects/hero-wireframes.png",
+          "/projects/table-yadika.png",
+        ],
+        explorations:
+          "I explored visual concepts that made journey planning fast and intuitive, with the search experience becoming the focal point of the interface.",
+        explorationsImages: [
+          "/projects/explore (1).png",
+          "/projects/explore (2).png",
+          "/projects/explore (3).png",
+          "/projects/explore (4).png",
+        ],
       },
 
       keyFeatures: [
         {
           heading: "Route Finder",
-          image: "/projects/design-placeholder-wireframes.png",
-          bullets: [
-            "Placeholder: search by stop or destination",
-            "Placeholder: saves recent routes",
-          ],
+          image: "/projects/findd.png",
+          bullets: ["Search by stop or destination", "Saves recent routes"],
         },
         {
           heading: "Live Schedules",
-          image: "/projects/design-placeholder-hifi.png",
-          bullets: [
-            "Placeholder: real-time arrival estimates",
-            "Placeholder: service alerts",
-          ],
+          image: "/projects/live.png",
+          bullets: ["Real-time arrival estimates", "Service alerts"],
         },
       ],
 
