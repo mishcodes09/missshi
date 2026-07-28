@@ -36,6 +36,8 @@
 .accentCyan { background-color: rgba(127, 224, 230, 0.3); }
 .accentRed { background-color: rgba(242, 75, 63, 0.14); }
 
+.pastel { border-color: transparent; }
+
 .text {
   color: #2b2f38;
   font-size: 0.95rem;

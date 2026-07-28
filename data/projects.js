@@ -108,17 +108,17 @@ const projects = [
           {
             icon: "🧭",
             boldLabel: "Confusing routes.",
-            text: "Placeholder: commuters struggled to find the right bus route.",
+            text: "Commuters struggled to find the right bus route.",
           },
           {
             icon: "⏱️",
             boldLabel: "No live updates.",
-            text: "Placeholder: no way to check real-time schedules or delays.",
+            text: "No way to check real-time schedules or delays.",
           },
           {
             icon: "📱",
             boldLabel: "Poor mobile experience.",
-            text: "Placeholder: the old site wasn't usable on a phone.",
+            text: "The old site wasn't usable on a phone.",
           },
         ],
       },
@@ -127,9 +127,21 @@ const projects = [
         goalsBody:
           "I redesigned the Algoa Bus website into a mobile-first, user-centred platform that enables commuters to easily search routes, view schedules, compare fares, and plan trips from start to finish. By prioritizing clarity, intuitive navigation, and accessible travel information, the redesign reduces uncertainty and makes public transport a more convenient and reliable choice.",
         highLevelGoals: [
-          { icon: "🎯", text: "Placeholder: simplify route discovery." },
-          { icon: "📶", text: "Placeholder: surface live schedule data." },
-          { icon: "📲", text: "Placeholder: design mobile-first." },
+          {
+            icon: "🎯",
+            boldLabel: "Simplify route discovery.",
+            text: "Placeholder: simplify route discovery.",
+          },
+          {
+            icon: "📶",
+            boldLabel: "Surface live schedule data.",
+            text: "Placeholder: surface live schedule data.",
+          },
+          {
+            icon: "📲",
+            boldLabel: "Design mobile-first.",
+            text: "Placeholder: design mobile-first.",
+          },
         ],
       },
 
@@ -165,12 +177,10 @@ const projects = [
             ],
             findings: [
               {
-                icon: "💬",
-                text: "Add a key insight from your first interview.",
+                text: "Finding the right bus depended more on local knowledge than the official website.",
               },
               {
-                icon: "💬",
-                text: "Add another insight that influenced the redesign.",
+                text: "A simple start-to-destination search emerged as the most valuable feature for reducing travel uncertainty.",
               },
             ],
           },
@@ -184,17 +194,8 @@ const projects = [
 
       designProcess: {
         tools: "Figma, Pinterest, Procreate ",
-        designReview: "Placeholder: how design reviews were run and with whom.",
-        ideation: [
-          {
-            icon: "✏️",
-            text: "Placeholder: sketching initial route-finder concepts.",
-          },
-          {
-            icon: "🗂️",
-            text: "Placeholder: sorting and prioritizing ideas with the team.",
-          },
-        ],
+        designReview:
+          "I sought feedback from fellow designers to evaluate usability, visual hierarchy, and overall user experience throughout the design process.",
         wireframing:
           "I focused on designing a journey planner that lets users search their starting point and destination instead of manually browsing routes.",
         wireframingImages: [
@@ -225,42 +226,36 @@ const projects = [
         },
       ],
 
-      visualDesign: {
-        designSystemImage: "/projects/design-placeholder-hifi.png",
-        typography: "Placeholder: typography choices and rationale.",
-        colorPalette: "Placeholder: color palette and rationale.",
-        components: "Placeholder: reusable component patterns.",
-        branding: "Placeholder: branding considerations.",
-      },
-
       finalDesigns: {
-        prototypeUrl: null,
-        images: [
-          "/projects/design-placeholder-hifi.png",
-          "/projects/design-placeholder-wireframes.png",
-        ],
+        prototypeUrl: "https://sidepr.netlify.app/",
       },
 
       developerHandoff: {
-        body: "Placeholder: notes on developer handoff — specs, redlines, and assets delivered.",
+        body: "The final designs were translated directly into a responsive frontend, ensuring the implemented experience remained faithful to the original UX decisions. Owning both the design and development process allowed for faster iteration, consistent interactions, and a seamless transition from prototype to production.",
       },
 
       reflections: {
         keyTakeaways: [
           {
             icon: "💡",
-            boldLabel: "Research pays off.",
-            text: "Placeholder: what talking to commuters revealed.",
+            boldLabel: "Design around user goals not features.",
+            text: "A simple journey planner solved a bigger problem than adding more functionality.",
           },
           {
             icon: "🔄",
-            boldLabel: "Iterate fast.",
-            text: "Placeholder: how quick iteration helped refine the flow.",
+            boldLabel: "Information architecture matters.",
+            text: "Making routes, schedules, and fares easy to find significantly improves the overall user experience.",
+          },
+          {
+            icon: "🔄",
+            boldLabel: "Design and development work best together.",
+            text: "Owning both disciplines ensured the final product closely matched the original design vision.",
           },
         ],
         nextSteps: [
-          "Placeholder: usability test the live prototype",
-          "Placeholder: explore accessibility improvements",
+          "Introduce live bus tracking",
+          "Expand the journey planner",
+          "Smart notifications",
         ],
       },
     },

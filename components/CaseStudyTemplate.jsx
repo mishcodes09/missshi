@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./CaseStudyTemplate.module.css";
 import OverviewGrid from "./OverviewGrid";
 import IconTextList from "./IconTextList";
+import ChallengeCards from "./ChallengeCard";
 import FeatureBlock from "./FeatureBlock";
 import ImageGrid from "./ImageGrid";
 import ZoomableImage from "./ZoomableImage";
@@ -124,7 +125,7 @@ export default function CaseStudyTemplate({ project }) {
             <section id="challenge" className={styles.section}>
               <h2 className={styles.sectionHeading}>The Challenge</h2>
               {challenge.problemFraming && <Paragraphs text={challenge.problemFraming} />}
-              <IconTextList items={challenge.pinpointingIssues} />
+              <ChallengeCards items={challenge.pinpointingIssues} />
             </section>
           )}
 
@@ -132,7 +133,7 @@ export default function CaseStudyTemplate({ project }) {
             <section id="solution" className={styles.section}>
               <h2 className={styles.sectionHeading}>The Solution</h2>
               {solution.goalsBody && <p className={styles.content}>{solution.goalsBody}</p>}
-              <IconTextList items={solution.highLevelGoals} />
+              <ChallengeCards items={solution.highLevelGoals} />
             </section>
           )}
 
@@ -149,7 +150,7 @@ export default function CaseStudyTemplate({ project }) {
                       <ImageGrid images={method.images} alt={`${method.heading} research`} />
                     )}
                     <InterviewMockup messages={method.conversation} />
-                    <IconTextList items={method.findings} />
+                    <ChallengeCards items={method.findings} />
                   </section>
                 ))}
               </div>
@@ -269,7 +270,7 @@ export default function CaseStudyTemplate({ project }) {
           {reflections && (
             <section id="reflections" className={styles.section}>
               <h2 className={styles.sectionHeading}>Reflections</h2>
-              <IconTextList items={reflections.keyTakeaways} />
+              <ChallengeCards items={reflections.keyTakeaways} />
               {reflections.nextSteps?.length > 0 && (
                 <div className={styles.subBlock}>
                   <h3 className={styles.subHeading}>Next Steps</h3>

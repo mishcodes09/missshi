@@ -7,17 +7,24 @@ export default function IconTextList({ items }) {
 
   return (
     <ul className={styles.list}>
-      {items.map((item, i) => (
-        <li key={i} className={styles.item}>
-          <span className={`${styles.icon} ${styles[ACCENTS[i % ACCENTS.length]]}`}>
-            {item.icon}
-          </span>
-          <p className={styles.text}>
-            {item.boldLabel && <strong className={styles.boldLabel}>{item.boldLabel} </strong>}
-            {item.text}
-          </p>
-        </li>
-      ))}
+      {items.map((item, i) => {
+        const accent = styles[ACCENTS[i % ACCENTS.length]];
+
+        return (
+          <li
+            key={i}
+            className={item.icon ? styles.item : `${styles.item} ${styles.pastel} ${accent}`}
+          >
+            {item.icon && (
+              <span className={`${styles.icon} ${accent}`}>{item.icon}</span>
+            )}
+            <p className={styles.text}>
+              {item.boldLabel && <strong className={styles.boldLabel}>{item.boldLabel} </strong>}
+              {item.text}
+            </p>
+          </li>
+        );
+      })}
     </ul>
   );
 }

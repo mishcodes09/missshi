@@ -3,8 +3,8 @@
   padding: 13px 26px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
-  background-color: #f5a623;
-  color: #14161c;
+  background-image: linear-gradient(135deg, #5b8def, #2f5bea);
+  color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
