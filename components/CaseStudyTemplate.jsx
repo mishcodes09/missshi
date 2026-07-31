@@ -26,7 +26,6 @@ export default function CaseStudyTemplate({ project }) {
     years,
     heroImage,
     overview,
-    highlights,
     challenge,
     solution,
     research,
@@ -40,7 +39,6 @@ export default function CaseStudyTemplate({ project }) {
 
   const sections = [
     overview && { id: "overview", label: "Overview" },
-    highlights?.length > 0 && { id: "highlights", label: "Highlights" },
     challenge && { id: "challenge", label: "The Challenge" },
     solution && { id: "solution", label: "The Solution" },
     research && { id: "research", label: "Research" },
@@ -74,9 +72,9 @@ export default function CaseStudyTemplate({ project }) {
       <section id="top" className={styles.hero}>
         <header className={styles.header}>
           <h1 className={styles.title}>{title}</h1>
-          {years && <p className={styles.years}>{years}</p>}
         </header>
         {tagline && <p className={styles.tagline}>{tagline}</p>}
+        {years && <p className={styles.years}>{years}</p>}
         {heroImage && (
           <ZoomableImage
             src={heroImage}
@@ -114,26 +112,73 @@ export default function CaseStudyTemplate({ project }) {
             </section>
           )}
 
-          {highlights?.length > 0 && (
-            <section id="highlights" className={styles.section}>
-              <h2 className={styles.sectionHeading}>Highlights</h2>
-              <ImageGrid images={highlights} alt={`${title} highlight`} />
-            </section>
-          )}
-
           {challenge && (
             <section id="challenge" className={styles.section}>
-              <h2 className={styles.sectionHeading}>The Challenge</h2>
-              {challenge.problemFraming && <Paragraphs text={challenge.problemFraming} />}
+              {challenge.eyebrow && <p className={styles.eyebrow}>{challenge.eyebrow}</p>}
+              <h2 className={styles.sectionHeading}>{challenge.headline || "The Challenge"}</h2>
+
+              {challenge.heroImage && (
+                <div className={styles.evidenceHero}>
+                  <div className={styles.evidenceHeroImageWrap}>
+                    <ZoomableImage
+                      src={challenge.heroImage}
+                      alt={challenge.headline || title}
+                      wrapClassName={styles.imageBlockWrap}
+                      className={styles.imageBlock}
+                    />
+                    {challenge.heroTag && (
+                      <span className={styles.evidenceTag}>{challenge.heroTag}</span>
+                    )}
+                  </div>
+                  {challenge.heroCaption && (
+                    <p className={styles.caption}>{challenge.heroCaption}</p>
+                  )}
+                </div>
+              )}
+
+              {challenge.evidence?.length > 0 && (
+                <div className={styles.evidenceRow}>
+                  {challenge.evidence.map((item, i) => (
+                    <div key={item.image || i} className={styles.evidenceCell}>
+                      <ZoomableImage
+                        src={item.image}
+                        alt={item.caption || `${title} evidence ${i + 1}`}
+                        wrapClassName={styles.imageBlockWrap}
+                        className={styles.imageBlock}
+                      />
+                      {item.caption && <p className={styles.caption}>{item.caption}</p>}
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <ChallengeCards items={challenge.pinpointingIssues} />
             </section>
           )}
 
           {solution && (
             <section id="solution" className={styles.section}>
-              <h2 className={styles.sectionHeading}>The Solution</h2>
-              {solution.goalsBody && <p className={styles.content}>{solution.goalsBody}</p>}
-              <ChallengeCards items={solution.highLevelGoals} />
+              {solution.eyebrow && <p className={styles.eyebrow}>{solution.eyebrow}</p>}
+              <h2 className={styles.sectionHeading}>{solution.headline || "The Solution"}</h2>
+
+              {solution.highlights?.length > 0 && (
+                <div className={styles.solutionGrid}>
+                  {solution.highlights.map((item, i) => (
+                    <div key={item.title || i} className={styles.solutionCard}>
+                      {item.title && <h3 className={styles.solutionTitle}>{item.title}</h3>}
+                      {item.text && <p className={styles.solutionText}>{item.text}</p>}
+                      {item.image && (
+                        <ZoomableImage
+                          src={item.image}
+                          alt={item.title || `${title} solution ${i + 1}`}
+                          wrapClassName={styles.solutionImageWrap}
+                          className={styles.solutionImage}
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </section>
           )}
 

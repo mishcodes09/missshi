@@ -203,8 +203,8 @@ a {
 
 .showcase-title {
   font-family: "Instrument Serif", serif;
-  font-weight: 400;
-  font-size: 42px;
+  font-weight: 800;
+  font-size: 2rem;
   margin: 0 0 16px;
   line-height: 1.15;
   color: #14161c;
@@ -419,6 +419,6 @@ a {
   }
 
   .showcase-title {
-    font-size: 32px;
+    font-size: 2.4rem;
   }
 }

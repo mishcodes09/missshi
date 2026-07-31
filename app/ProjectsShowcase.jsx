@@ -6,12 +6,12 @@ import projects from "../data/projects";
 import styles from "./ProjectsShowcase.module.css";
 
 const FILTERS = [
-  { key: "development", label: "Code" },
   { key: "design", label: "Design" },
+  { key: "development", label: "Code" },
 ];
 
 export default function ProjectsShowcase() {
-  const [filter, setFilter] = useState("development");
+  const [filter, setFilter] = useState("design");
 
   const filteredProjects = projects.filter(
     (project) => project.category === filter

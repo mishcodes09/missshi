@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import styles from "./ZoomableImage.module.css";
 
 export default function ZoomableImage({ src, alt, className, wrapClassName }) {
@@ -40,24 +41,26 @@ export default function ZoomableImage({ src, alt, className, wrapClassName }) {
         <img src={src} alt={alt} className={className} />
       </div>
 
-      {open && (
-        <div className={styles.overlay} onClick={() => setOpen(false)}>
-          <button
-            type="button"
-            className={styles.close}
-            onClick={() => setOpen(false)}
-            aria-label="Close"
-          >
-            ×
-          </button>
-          <img
-            src={src}
-            alt={alt}
-            className={styles.fullImage}
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      {open &&
+        createPortal(
+          <div className={styles.overlay} onClick={() => setOpen(false)}>
+            <button
+              type="button"
+              className={styles.close}
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <img
+              src={src}
+              alt={alt}
+              className={styles.fullImage}
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>,
+          document.body
+        )}
     </>
   );
 }

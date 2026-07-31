@@ -58,7 +58,8 @@ const projects = [
   },
   {
     slug: "algoa-bus-uiux-case-study",
-    title: "Algoa Bus Redesign",
+    title:
+      "From 'ask a local' to 'search and go' — redesigning Algoa Bus's digital experience.",
     category: "design",
     tagline:
       "Redesigning the digital experience of Port Elizabeth's public bus system by replacing uncertainty with clarity.",
@@ -73,37 +74,39 @@ const projects = [
     // Every field here is placeholder copy — swap in the real content.
     caseStudy: {
       years: "2025",
-      heroImage: "/projects/algoaa.png",
+      heroImage: "/projects/v2.png",
 
       overview: {
-        role: "Product & UX Designer",
-        focus: "Wayfinding & journey planning for commuters",
+        role: "Self-directed UX/UI redesign",
+        type: "Speculative case study",
         responsibilities: [
           "User Research",
           "Wireframing",
           "Prototyping",
           "Visual Design",
         ],
-        platform: "Web",
         timeline: "5 months",
-        status: "In Progress",
-        deliverables: [
-          "User Flows",
-          "Wireframes",
-          "High-Fidelity Prototype",
-          "Figma File",
-        ],
         body: "This case study explores the redesign of the Algoa Bus website, a public transport service that plays a vital role in helping people travel across Port Elizabeth (Gqeberha). The project was driven by a simple challenge: while the buses are widely used, finding reliable information about routes, schedules, and fares online is unnecessarily difficult. Through user research and a mobile-first UX approach, the redesign creates a clearer, more intuitive journey-planning experience for commuters, making public transport easier to understand and more accessible for both existing and first-time users.",
       },
 
-      highlights: [
-        "/projects/design-placeholder-hifi.png",
-        "/projects/design-placeholder-wireframes.png",
-      ],
-
       challenge: {
-        problemFraming:
-          "Algoa Bus is an essential public transport service in Port Elizabeth (Gqeberha), yet its digital experience does not provide commuters with the information they need to travel confidently. Users struggle to find routes, timetables, fares, and stop information, often relying on word-of-mouth, phone calls, or prior knowledge instead of the official website. The challenge was to redesign the platform into a user-centred experience that removes uncertainty from the journey-planning process. By making route discovery, scheduling, and fare information easy to access, the goal was to help both existing and first-time commuters make informed travel decisions while improving trust in the service.",
+        eyebrow: "The Problem",
+        headline: "A site that promotes a service it no longer has.",
+        heroImage: "/projects/challenge.png",
+        heroTag: "No live schedule data",
+        heroCaption:
+          'The live site still lists a "timetable mobile app" as a core offer — it was discontinued.',
+        evidence: [
+          {
+            image: "/projects/videosnap.gif",
+            caption:
+              "Trying to find times, fares, or routes on the current site. The experience is confusing and frustrating.",
+          },
+          {
+            image: "/projects/reviews.png",
+            caption: "Real commuter feedback — names redacted.",
+          },
+        ],
         pinpointingIssues: [
           {
             icon: "🧭",
@@ -124,23 +127,29 @@ const projects = [
       },
 
       solution: {
-        goalsBody:
-          "I redesigned the Algoa Bus website into a mobile-first, user-centred platform that enables commuters to easily search routes, view schedules, compare fares, and plan trips from start to finish. By prioritizing clarity, intuitive navigation, and accessible travel information, the redesign reduces uncertainty and makes public transport a more convenient and reliable choice.",
-        highLevelGoals: [
+        eyebrow: "The Solution",
+        headline:
+          "A trip planner that actually answers where, when, and how much.",
+        highlights: [
           {
-            icon: "🎯",
-            boldLabel: "Simplify route discovery.",
-            text: "Placeholder: simplify route discovery.",
+            title: "Search replaces browsing.",
+            text: "A start-to-destination search replaces the old suburb list.",
+            image: "/projects/trip.png",
           },
           {
-            icon: "📶",
-            boldLabel: "Surface live schedule data.",
-            text: "Placeholder: surface live schedule data.",
+            title: "One screen, every answer.",
+            text: "Times, fares, and routes surface together on the results screen.",
+            image: "/projects/oone.png",
           },
           {
-            icon: "📲",
-            boldLabel: "Design mobile-first.",
-            text: "Placeholder: design mobile-first.",
+            title: "The full route, step by step.",
+            text: "A stop-by-stop timeline shows exactly where the bus goes.",
+            image: "/projects/routtees.png",
+          },
+          {
+            title: "No more dead ends.",
+            text: "Suburb and stop pages link forward instead of stopping short.",
+            image: "/projects/design-placeholder-hifi-3.png",
           },
         ],
       },
@@ -282,35 +291,6 @@ const projects = [
       {
         label: "High-fidelity",
         image: "/projects/design-placeholder-hifi-2.png",
-      },
-    ],
-    outcome: "Placeholder: result / what you learned.",
-    figmaUrl: null,
-    liveUrl: null,
-    repoUrl: null,
-  },
-  {
-    slug: "habit-tracker-app-uiux-case-study",
-    title: "Habit Tracker App — Product Design",
-    category: "design",
-    tagline:
-      "Placeholder tagline — helping users build consistent daily habits",
-    description: "Placeholder 1-2 sentence card summary.",
-    image: "/projects/design-placeholder-3.png",
-    tags: ["UX Research", "UI Design", "Figma"],
-    problem: "Placeholder: what was broken/missing before the redesign.",
-    process: [
-      {
-        label: "Research",
-        image: "/projects/design-placeholder-research-3.png",
-      },
-      {
-        label: "Wireframes",
-        image: "/projects/design-placeholder-wireframes-3.png",
-      },
-      {
-        label: "High-fidelity",
-        image: "/projects/design-placeholder-hifi-3.png",
       },
     ],
     outcome: "Placeholder: result / what you learned.",

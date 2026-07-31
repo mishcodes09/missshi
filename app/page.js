@@ -49,10 +49,11 @@ function Hero() {
       <div className="hero__content">
         <p className="hero__greeting">Hi! I&apos;m Mihle Mncunzwa</p>
         <h1 className="hero__title">
-          Junior <em>Product</em> Designer & <em>Software</em> Developer
+          <em>Product Designer</em> with a developer's eye.
         </h1>
         <p className="hero__subtitle">
-          Bringing the sass to software and the flair to functionality.
+          Recent CS grad who designs like a product thinker and builds like an
+          engineer.
         </p>
 
         <div className="hero__buttons">
