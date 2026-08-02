@@ -54,41 +54,31 @@ export default function ProjectsShowcase() {
         ))}
       </div>
 
-      <div className="projects-grid" id="projectsGrid" role="list">
-        {filteredProjects.map((project) => {
-          const badgeClass = project.liveUrl ? "live" : "coming-soon";
-          const badgeText = project.liveUrl ? "Live" : "Coming Soon";
+      <div className={styles.grid} id="projectsGrid" role="list">
+        {filteredProjects.map((project) => (
+          <Link
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            className={styles.card}
+            role="listitem"
+          >
+            <div className={styles.imageWrap}>
+              <img src={project.image} alt={project.title} className={styles.image} />
+            </div>
 
-          return (
-            <Link
-              key={project.slug}
-              href={`/projects/${project.slug}`}
-              className="showcase-card"
-              role="listitem"
-            >
-              <span className={`status-badge ${badgeClass}`}>{badgeText}</span>
-              <img src={project.image} alt={project.title} />
-
-              <div className="showcase-caption">
-                <p className="showcase-category">Selected project</p>
-                <h3 className="showcase-name">{project.title}</h3>
-                <p className="showcase-desc">{project.tagline}</p>
-
-                <div className="tech-stack">
-                  {project.tags?.slice(0, 3).map((tag) => (
-                    <span key={tag} className="tech-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="showcase-links">
-                  <span className="project-link primary">View case study</span>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+            <div className={styles.body}>
+              <h3 className={styles.cardTitle}>{project.title}</h3>
+              {project.description && (
+                <p className={styles.description}>{project.description}</p>
+              )}
+              {(project.tool || project.year) && (
+                <p className={styles.meta}>
+                  {[project.tool, project.year].filter(Boolean).join(" · ")}
+                </p>
+              )}
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
   );

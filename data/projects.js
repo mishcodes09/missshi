@@ -9,6 +9,8 @@ const projects = [
       "AI-powered sales and revenue automation agent with predictive analytics.",
     image: "/projects/4.png",
     tags: ["React", "Firebase", "AI"],
+    tool: "React",
+    year: "2025",
     liveUrl: "https://ibm-revenuex-frontend.onrender.com/",
     repoUrl: "https://github.com/mishcodes09/IBM-RevenueX",
     content:
@@ -23,6 +25,8 @@ const projects = [
       "Full-stack marketing site for Madolo Construction — Next.js 15, and WhatsApp.",
     image: "/projects/1.png",
     tags: ["Next.js", "React", "TailwindCSS", "WhatsApp"],
+    tool: "Next.js",
+    year: "2025",
     liveUrl: "https://www.madolo.org.za/",
     repoUrl: "https://github.com/mishcodes09/madolo-construction.git",
     content:
@@ -37,6 +41,8 @@ const projects = [
       "Non-profit organization website built with Framer, showcasing their mission and initiatives.",
     image: "/projects/2.png",
     tags: ["Framer"],
+    tool: "Framer",
+    year: "2025",
     liveUrl: "https://mzongwana.org/",
     repoUrl: null,
     content:
@@ -51,6 +57,8 @@ const projects = [
       "Redesign & development of the Algoa Bus website, enhancing user experience and functionality.",
     image: "/projects/3.png",
     tags: ["Vue", "TailwindCSS"],
+    tool: "Vue",
+    year: "2025",
     liveUrl: "https://sidepr.netlify.app/",
     repoUrl: "https://github.com/mishcodes09/algoabus.git",
     content:
@@ -63,9 +71,12 @@ const projects = [
     category: "design",
     tagline:
       "Redesigning the digital experience of Port Elizabeth's public bus system by replacing uncertainty with clarity.",
-    description: "Placeholder 1-2 sentence card summary.",
+    description:
+      "Self-directed UX/UI redesign of Algoa Bus's website — research, wireframes, and a mobile-first prototype that replaces guesswork with a simple route search.",
     image: "/projects/algoaa.png",
     tags: ["UX Research", "Wireframing", "Figma"],
+    tool: "Figma",
+    year: "2025",
     figmaUrl: null,
     liveUrl: null,
     repoUrl: null,
@@ -149,7 +160,7 @@ const projects = [
           {
             title: "No more dead ends.",
             text: "Suburb and stop pages link forward instead of stopping short.",
-            image: "/projects/design-placeholder-hifi-3.png",
+            image: "/projects/both.png",
           },
         ],
       },
@@ -202,7 +213,7 @@ const projects = [
       },
 
       designProcess: {
-        tools: "Figma, Pinterest, Procreate ",
+        tools: "Figma",
         designReview:
           "I sought feedback from fellow designers to evaluate usability, visual hierarchy, and overall user experience throughout the design process.",
         wireframing:
@@ -212,28 +223,7 @@ const projects = [
           "/projects/hero-wireframes.png",
           "/projects/table-yadika.png",
         ],
-        explorations:
-          "I explored visual concepts that made journey planning fast and intuitive, with the search experience becoming the focal point of the interface.",
-        explorationsImages: [
-          "/projects/explore (1).png",
-          "/projects/explore (2).png",
-          "/projects/explore (3).png",
-          "/projects/explore (4).png",
-        ],
       },
-
-      keyFeatures: [
-        {
-          heading: "Route Finder",
-          image: "/projects/findd.png",
-          bullets: ["Search by stop or destination", "Saves recent routes"],
-        },
-        {
-          heading: "Live Schedules",
-          image: "/projects/live.png",
-          bullets: ["Real-time arrival estimates", "Service alerts"],
-        },
-      ],
 
       finalDesigns: {
         prototypeUrl: "https://sidepr.netlify.app/",
@@ -278,6 +268,8 @@ const projects = [
     description: "Placeholder 1-2 sentence card summary.",
     image: "/projects/chef.png",
     tags: ["UX Research", "Branding", "Figma"],
+    tool: "Figma",
+    year: "2025",
     problem: "Placeholder: what was broken/missing before the redesign.",
     process: [
       {
