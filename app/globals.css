@@ -103,7 +103,9 @@ a {
   height: 2px;
   background-color: #14161c;
   border-radius: 2px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .navbar__toggle--open .navbar__toggle-bar:nth-child(1) {
@@ -167,8 +169,8 @@ a {
 }
 
 .hero__image-circle {
-  width: 420px;
-  height: 420px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   overflow: hidden;
   background-color: #e9e9ea;
@@ -197,7 +199,7 @@ a {
 
 .hero__title {
   font-size: 2rem;
-  line-height: 1.1;
+  line-height: 1.5;
   font-family: "Instrument Serif", serif;
   font-weight: 800;
   color: #14161c;
@@ -210,7 +212,7 @@ a {
 }
 
 .hero__subtitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #2b2f38;
   margin-bottom: 36px;
 }
