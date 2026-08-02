@@ -169,8 +169,8 @@ a {
 }
 
 .hero__image-circle {
-  width: 500px;
-  height: 500px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
   overflow: hidden;
   background-color: #e9e9ea;
@@ -199,7 +199,7 @@ a {
 
 .hero__title {
   font-size: 2rem;
-  line-height: 1.5;
+  line-height: 1.1;
   font-family: "Instrument Serif", serif;
   font-weight: 800;
   color: #14161c;
@@ -212,7 +212,7 @@ a {
 }
 
 .hero__subtitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #2b2f38;
   margin-bottom: 36px;
 }
@@ -331,16 +331,16 @@ a {
   }
 
   .hero__image-circle {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   }
 
   .hero__title {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .hero__subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .hero__buttons {
