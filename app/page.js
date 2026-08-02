@@ -1,4 +1,9 @@
+import Navbar from "./Navbar";
 import ProjectsShowcase from "./ProjectsShowcase";
+import Skills from "./Skills";
+import AboutMe from "./AboutMe";
+import Connect from "./Connect";
+import Footer from "./Footer";
 
 export default function Home() {
   return (
@@ -6,29 +11,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProjectsShowcase />
+      <Skills />
+      <AboutMe />
+      <Connect />
+      <Footer />
     </>
-  );
-}
-
-function Navbar() {
-  return (
-    <header className="navbar">
-      <div className="navbar__logo">
-        <span className="logo-dot" />
-        <span className="logo-text">mishsspace</span>
-      </div>
-      <nav className="navbar__links">
-        <a href="#resume">Resume</a>
-        <span className="divider">|</span>
-        <a href="#projects">Projects</a>
-        <span className="divider">|</span>
-        <a href="#skills">Skills</a>
-        <span className="divider">|</span>
-        <a href="#about">About</a>
-        <span className="divider">|</span>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
   );
 }
 

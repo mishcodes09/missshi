@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./CaseStudyContents.module.css";
 
 export default function CaseStudyContents({ sections }) {
   const [activeId, setActiveId] = useState(sections[0]?.id);
+  const listRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,6 +25,11 @@ export default function CaseStudyContents({ sections }) {
     return () => observer.disconnect();
   }, [sections]);
 
+  useEffect(() => {
+    const activeLink = listRef.current?.querySelector(`.${styles.linkActive}`);
+    activeLink?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }, [activeId]);
+
   const scrollToId = (e, id) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -32,7 +38,7 @@ export default function CaseStudyContents({ sections }) {
   return (
     <nav className={styles.nav} aria-label="Case study contents">
       <p className={styles.label}>Contents</p>
-      <ul className={styles.list}>
+      <ul className={styles.list} ref={listRef}>
         {sections.map(({ id, label }) => (
           <li key={id}>
             <a

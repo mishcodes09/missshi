@@ -124,6 +124,34 @@
   text-align: center;
 }
 
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px 18px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #d4d4dc;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  background: #b8b8c4;
+}
+
+.dotActive {
+  background: #2f8ff0;
+  transform: scale(1.15);
+}
+
 @media (max-width: 560px) {
   .messages { padding: 16px 14px 8px; }
   .bubble { max-width: 88%; font-size: 0.9rem; }

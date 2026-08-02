@@ -1,0 +1,79 @@
+.section {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 80px 100px;
+  text-align: center;
+}
+
+.heading {
+  font-family: "Instrument Serif", serif;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.15;
+  color: #14161c;
+  margin: 0 0 48px;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.groupLabel {
+  margin: 0;
+  color: #9a9da5;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pillList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pill {
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+
+.pillFilled {
+  color: #ffffff;
+  background-color: #14161c;
+  border: 1px solid #14161c;
+}
+
+.pillOutlined {
+  color: #9a9da5;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 80px 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .heading {
+    font-size: 2.4rem;
+  }
+}

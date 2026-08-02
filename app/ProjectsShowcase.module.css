@@ -102,3 +102,9 @@
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 500px) {
+  .cardTitle {
+    font-size: 1.15rem;
+  }
+}

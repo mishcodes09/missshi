@@ -73,7 +73,7 @@ const projects = [
       "Redesigning the digital experience of Port Elizabeth's public bus system by replacing uncertainty with clarity.",
     description:
       "Self-directed UX/UI redesign of Algoa Bus's website — research, wireframes, and a mobile-first prototype that replaces guesswork with a simple route search.",
-    image: "/projects/algoaa.png",
+    image: "/projects/trip-2.png",
     tags: ["UX Research", "Wireframing", "Figma"],
     tool: "Figma",
     year: "2025",
@@ -85,7 +85,7 @@ const projects = [
     // Every field here is placeholder copy — swap in the real content.
     caseStudy: {
       years: "2025",
-      heroImage: "/projects/v2.png",
+      heroImage: "/projects/trip-2.png",
 
       overview: {
         role: "Self-directed UX/UI redesign",
@@ -121,18 +121,18 @@ const projects = [
         pinpointingIssues: [
           {
             icon: "🧭",
-            boldLabel: "Confusing routes.",
-            text: "Commuters struggled to find the right bus route.",
+            boldLabel: "Outdated information.",
+            text: "The site lists a discontinued mobile app and old timetables, which misleads users.",
           },
           {
             icon: "⏱️",
-            boldLabel: "No live updates.",
-            text: "No way to check real-time schedules or delays.",
+            boldLabel: "No schedules, fares, routes data.",
+            text: "The site doesn't clearly communicate when buses run, how much they cost, or where they go.",
           },
           {
             icon: "📱",
             boldLabel: "Poor mobile experience.",
-            text: "The old site wasn't usable on a phone.",
+            text: "The website isn't optimized for commuters accessing information on their phones.",
           },
         ],
       },
@@ -144,7 +144,7 @@ const projects = [
         highlights: [
           {
             title: "Search replaces browsing.",
-            text: "A start-to-destination search replaces the old suburb list.",
+            text: "A simple search bar lets users enter their starting point and destination instead of manually browsing routes.",
             image: "/projects/trip.png",
           },
           {
@@ -155,11 +155,11 @@ const projects = [
           {
             title: "The full route, step by step.",
             text: "A stop-by-stop timeline shows exactly where the bus goes.",
-            image: "/projects/routtees.png",
+            image: "/projects/central.png",
           },
           {
-            title: "No more dead ends.",
-            text: "Suburb and stop pages link forward instead of stopping short.",
+            title: "Browse by suburb or stop.",
+            text: "Users can also explore routes by suburb or bus stop if they prefer to browse instead of search.",
             image: "/projects/both.png",
           },
         ],
@@ -167,7 +167,7 @@ const projects = [
 
       research: {
         intro:
-          "I combined competitor analysis, commuter interviews, Google Reviews, and personal experience to uncover the biggest barriers preventing people from confidently using Algoa Bus.",
+          "I combined competitor analysis, commuter interviews, and personal experience to uncover the biggest barriers preventing people from confidently using Algoa Bus.",
         methods: [
           {
             heading: "Market Insights & Competitor Analysis",
@@ -175,24 +175,73 @@ const projects = [
             images: ["/projects/competitor.png"],
           },
           {
+            heading: "Personal Experience",
+            body: "I've used Algoa Bus myself for years — it got me to school reliably and cheaply, and I trusted it for that one route. But I never knew what else it could do for me. I didn't know the other routes, the stops, the fares, or the times for anywhere beyond my daily trip. When friends found out I used the bus, they'd ask me about routes to other parts of town, and I never had an answer.\n\nI was curious about exploring other routes, but never confident enough to actually try — calling the depot to ask felt like more effort than it was worth, and getting it wrong meant being stranded somewhere unfamiliar. So for anything outside my one known route, I defaulted to a taxi or an Uber instead, even though the bus would've been cheaper.\n\nThat gap — trusting the bus for one specific trip but avoiding it for everything else — is really what started this project.",
+            images: ["/projects/IMG_1713.jpeg", "/projects/IMG_0215.jpeg"],
+          },
+          {
             heading: "Usability Interviews",
             body: "I spoke with local commuters to learn how they plan journeys and why many avoid using Algoa Bus for unfamiliar destinations.",
-            conversation: [
+            interviews: [
               {
-                speaker: "researcher",
-                text: "How do you usually find the right bus route?",
+                conversation: [
+                  {
+                    speaker: "researcher",
+                    text: "How do you usually find the right bus route?",
+                  },
+                  {
+                    speaker: "commuter",
+                    text: "Mostly by asking someone, or calling the depot. The website doesn't actually tell you times or fares, so there's no point checking it.",
+                  },
+                  {
+                    speaker: "researcher",
+                    text: "What would make planning a trip easier?",
+                  },
+                  {
+                    speaker: "commuter",
+                    text: "Just seeing the route, time, and fare all in one place — that's not there at all right now.",
+                  },
+                ],
               },
               {
-                speaker: "commuter",
-                text: "Mostly by asking someone or calling the office. The website is difficult to understand on my phone.",
+                conversation: [
+                  {
+                    speaker: "researcher",
+                    text: "Have you ever tried a route you didn't already know?",
+                  },
+                  {
+                    speaker: "commuter",
+                    text: "Not really — too risky. If I get it wrong I could be stuck waiting a long time.",
+                  },
+                  {
+                    speaker: "researcher",
+                    text: "What stopped you from using the website to check first?",
+                  },
+                  {
+                    speaker: "commuter",
+                    text: "I looked, but there was nothing useful on it — no times, no way to search a route.",
+                  },
+                ],
               },
               {
-                speaker: "researcher",
-                text: "What information would make planning a trip easier?",
-              },
-              {
-                speaker: "commuter",
-                text: "A clear route search, the timetable, and the fare in one place.",
+                conversation: [
+                  {
+                    speaker: "researcher",
+                    text: "How do you usually find out if a bus is running late?",
+                  },
+                  {
+                    speaker: "commuter",
+                    text: "You don't. The site doesn't have any of that, you just wait and hope.",
+                  },
+                  {
+                    speaker: "researcher",
+                    text: "If the site actually had real route and time info, would that change how you use it?",
+                  },
+                  {
+                    speaker: "commuter",
+                    text: "Definitely — right now there's no reason to check it at all.",
+                  },
+                ],
               },
             ],
             findings: [

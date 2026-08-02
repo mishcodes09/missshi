@@ -59,7 +59,7 @@
     top: auto;
     z-index: 20;
     max-height: none;
-    padding: 12px 20px;
+    padding: 12px 0;
     background: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
@@ -74,6 +74,9 @@
     gap: 18px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    padding: 0 20px;
+    mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
   }
 
   .list li { flex: 0 0 auto; }

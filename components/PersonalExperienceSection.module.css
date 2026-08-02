@@ -1,0 +1,130 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heading {
+  margin: 0 0 8px;
+  color: #14161c;
+  font-family: "Instrument Serif", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.textBox {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.paragraph {
+  color: #2b2f38;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: inherit;
+  background-image: linear-gradient(#2f8ff0, #2f8ff0);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  padding: 0.05em 0.3em;
+  margin: 0 -0.3em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 0.7s ease, color 0.7s ease 0.15s;
+}
+
+.highlight.inView {
+  background-size: 100% 100%;
+  color: #ffffff;
+}
+
+.underline {
+  background-image: linear-gradient(#2f8ff0, #2f8ff0);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0% 2px;
+  padding-bottom: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 0.7s ease;
+}
+
+.underline.inView {
+  background-size: 100% 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight,
+  .underline {
+    transition: none;
+  }
+}
+
+.imageStack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrap {
+  width: 78%;
+  border-radius: 20px;
+  background-color: #e9e9ea;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.imageFront {
+  position: relative;
+  z-index: 2;
+  margin-right: auto;
+}
+
+.imageBack {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  margin-top: -64px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .textBox {
+    padding: 20px;
+  }
+
+  .imageStack {
+    margin-top: 8px;
+  }
+
+  .imageBack {
+    margin-top: -40px;
+  }
+}

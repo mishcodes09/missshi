@@ -1,6 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./InterviewMockup.module.css";
 
-export default function InterviewMockup({ messages, participant }) {
+export default function InterviewMockup({ interviews, participant }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  if (!interviews?.length) return null;
+
+  const messages = interviews[activeIndex]?.conversation;
   if (!messages?.length) return null;
 
   const contactSpeaker = messages.find((m) => m.speaker !== "researcher")?.speaker;
@@ -38,6 +46,22 @@ export default function InterviewMockup({ messages, participant }) {
       </div>
 
       <figcaption className={styles.caption}>Example commuter interview</figcaption>
+
+      {interviews.length > 1 && (
+        <div className={styles.dots} role="tablist" aria-label="Other example interviews">
+          {interviews.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              role="tab"
+              aria-selected={index === activeIndex}
+              aria-label={`Show example interview ${index + 1}`}
+              className={`${styles.dot} ${index === activeIndex ? styles.dotActive : ""}`}
+              onClick={() => setActiveIndex(index)}
+            />
+          ))}
+        </div>
+      )}
     </figure>
   );
 }

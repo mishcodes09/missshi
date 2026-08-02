@@ -9,6 +9,7 @@ import ZoomableImage from "./ZoomableImage";
 import PrototypeCTA from "./PrototypeCTA";
 import CaseStudyContents from "./CaseStudyContents";
 import InterviewMockup from "./InterviewMockup";
+import PersonalExperienceSection from "./PersonalExperienceSection";
 
 function Paragraphs({ text }) {
   const paragraphs = Array.isArray(text)
@@ -187,17 +188,21 @@ export default function CaseStudyTemplate({ project }) {
               <h2 className={styles.sectionHeading}>Research Summary</h2>
               {research.intro && <Paragraphs text={research.intro} />}
               <div className={styles.researchMethods}>
-                {researchMethods.map((method) => (
-                  <section key={method.heading} className={styles.researchMethod}>
-                    <h3 className={styles.subHeading}>{method.heading}</h3>
-                    {method.body && <Paragraphs text={method.body} />}
-                    {method.images?.length > 0 && (
-                      <ImageGrid images={method.images} alt={`${method.heading} research`} />
-                    )}
-                    <InterviewMockup messages={method.conversation} />
-                    <ChallengeCards items={method.findings} />
-                  </section>
-                ))}
+                {researchMethods.map((method) =>
+                  method.heading === "Personal Experience" ? (
+                    <PersonalExperienceSection key={method.heading} method={method} title={title} />
+                  ) : (
+                    <section key={method.heading} className={styles.researchMethod}>
+                      <h3 className={styles.subHeading}>{method.heading}</h3>
+                      {method.body && <Paragraphs text={method.body} />}
+                      {method.images?.length > 0 && (
+                        <ImageGrid images={method.images} alt={`${method.heading} research`} />
+                      )}
+                      <InterviewMockup interviews={method.interviews} />
+                      <ChallengeCards items={method.findings} />
+                    </section>
+                  )
+                )}
               </div>
             </section>
           )}
