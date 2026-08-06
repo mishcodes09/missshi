@@ -7,6 +7,7 @@ import FeatureBlock from "./FeatureBlock";
 import ImageGrid from "./ImageGrid";
 import ZoomableImage from "./ZoomableImage";
 import PrototypeCTA from "./PrototypeCTA";
+import ctaStyles from "./PrototypeCTA.module.css";
 import CaseStudyContents from "./CaseStudyContents";
 import InterviewMockup from "./InterviewMockup";
 import PersonalExperienceSection from "./PersonalExperienceSection";
@@ -104,11 +105,6 @@ export default function CaseStudyTemplate({ project }) {
                     View Code
                   </a>
                 )}
-                {category === "design" && figmaUrl && (
-                  <a href={figmaUrl} target="_blank" rel="noreferrer" className={`${styles.linkPill} ${styles.linkPillFigma}`}>
-                    View in Figma
-                  </a>
-                )}
               </div>
             </section>
           )}
@@ -179,6 +175,12 @@ export default function CaseStudyTemplate({ project }) {
                     </div>
                   ))}
                 </div>
+              )}
+
+              {category === "design" && figmaUrl && (
+                <a href={figmaUrl} target="_blank" rel="noreferrer" className={`${ctaStyles.cta} ${styles.solutionFigmaLink}`}>
+                  View Designs in Figma ↗
+                </a>
               )}
             </section>
           )}

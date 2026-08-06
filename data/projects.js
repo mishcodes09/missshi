@@ -77,7 +77,7 @@ const projects = [
     tags: ["UX Research", "Wireframing", "Figma"],
     tool: "Figma",
     year: "2025",
-    figmaUrl: null,
+    figmaUrl: "https://figma.com/file/PLACEHOLDER",
     liveUrl: null,
     repoUrl: null,
 
@@ -256,7 +256,7 @@ const projects = [
           {
             heading: "User Personas",
             body: "Based on real user research, this persona highlights the motivations and pain points that shaped the redesign of the Algoa Bus experience.",
-            images: ["/projects/thando.png", "/projects/zola.png"],
+            images: ["/projects/Thando.png", "/projects/Zola.png"],
           },
         ],
       },
@@ -335,7 +335,7 @@ const projects = [
       },
     ],
     outcome: "Placeholder: result / what you learned.",
-    figmaUrl: null,
+    figmaUrl: "https://figma.com/file/PLACEHOLDER",
     liveUrl: null,
     repoUrl: null,
   },

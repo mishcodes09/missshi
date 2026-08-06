@@ -152,6 +152,10 @@
   margin-top: 32px;
 }
 
+.solutionFigmaLink {
+  margin-top: 32px;
+}
+
 .solutionCard {
   display: flex;
   flex-direction: column;
