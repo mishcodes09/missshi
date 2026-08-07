@@ -24,7 +24,6 @@ function Hero() {
     <section className="hero">
       <div className="hero__image-wrap">
         <div className="hero__image-circle">
-          {/* Swap this placeholder for your own photo at /public/profile.jpg */}
           <img
             src="/mishs-2.jpg"
             alt="Mihle Mncunzwa"
@@ -36,7 +35,7 @@ function Hero() {
       <div className="hero__content">
         <p className="hero__greeting">Hi! I&apos;m Mihle Mncunzwa</p>
         <h1 className="hero__title">
-          <em>Product Designer</em> with a developer's eye.
+          <em>UI/UX Designer</em> who thinks like a developer.
         </h1>
         <p className="hero__subtitle">
           Recent CS grad who designs like a product thinker and builds like an
