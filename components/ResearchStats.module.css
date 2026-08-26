@@ -1,0 +1,61 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 28px clamp(20px, 4vw, 36px);
+  margin: 8px 0 40px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  background-color: #f7f7f8;
+}
+
+.sample {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sampleLabel {
+  color: #9f8954;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sampleSize {
+  color: #8a8d95;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.value {
+  color: #14161c;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  color: #747983;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; gap: 20px; }
+}

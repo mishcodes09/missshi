@@ -1,9 +1,10 @@
 import styles from "./OverviewGrid.module.css";
+import PrototypeCTA from "./PrototypeCTA";
 
-export default function OverviewGrid({ overview }) {
+export default function OverviewGrid({ overview, prototypeUrl }) {
   if (!overview) return null;
 
-  const { role, type, responsibilities, timeline, body } = overview;
+  const { role, type, responsibilities, timeline, tools, outcome, body } = overview;
 
   const rows = [
     { label: "Role", value: role && <p className={styles.primary}>{role}</p> },
@@ -18,7 +19,27 @@ export default function OverviewGrid({ overview }) {
       label: "Timeline",
       value: timeline && <p className={styles.primary}>{timeline}</p>,
     },
-    { label: "Overview", value: body && <p className={styles.body}>{body}</p> },
+    {
+      label: "Tools",
+      value: tools && <p className={styles.primary}>{tools}</p>,
+    },
+    {
+      label: "Outcome",
+      value: outcome && <p className={styles.primary}>{outcome}</p>,
+    },
+    {
+      label: "Overview",
+      value: body && (
+        <>
+          <p className={styles.body}>{body}</p>
+          {prototypeUrl && (
+            <div className={styles.ctaWrap}>
+              <PrototypeCTA url={prototypeUrl} />
+            </div>
+          )}
+        </>
+      ),
+    },
   ].filter((row) => row.value);
 
   return (

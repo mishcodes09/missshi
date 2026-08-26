@@ -11,6 +11,9 @@ import ctaStyles from "./PrototypeCTA.module.css";
 import CaseStudyContents from "./CaseStudyContents";
 import InterviewMockup from "./InterviewMockup";
 import PersonalExperienceSection from "./PersonalExperienceSection";
+import ResearchStats from "./ResearchStats";
+import PersonaOutcomes from "./PersonaOutcomes";
+import AnnotatedScreens from "./AnnotatedScreens";
 
 function Paragraphs({ text }) {
   const paragraphs = Array.isArray(text)
@@ -92,7 +95,7 @@ export default function CaseStudyTemplate({ project }) {
           {overview && (
             <section id="overview" className={styles.section}>
               <h2 className={styles.sectionHeading}>Overview</h2>
-              <OverviewGrid overview={overview} />
+              <OverviewGrid overview={overview} prototypeUrl={finalDesigns?.prototypeUrl} />
 
               <div className={styles.links} aria-label="Project links">
                 {liveUrl && (
@@ -189,6 +192,7 @@ export default function CaseStudyTemplate({ project }) {
             <section id="research" className={styles.section}>
               <h2 className={styles.sectionHeading}>Research Summary</h2>
               {research.intro && <Paragraphs text={research.intro} />}
+              <ResearchStats stats={research.stats} />
               <div className={styles.researchMethods}>
                 {researchMethods.map((method) =>
                   method.heading === "Personal Experience" ? (
@@ -199,6 +203,9 @@ export default function CaseStudyTemplate({ project }) {
                       {method.body && <Paragraphs text={method.body} />}
                       {method.images?.length > 0 && (
                         <ImageGrid images={method.images} alt={`${method.heading} research`} />
+                      )}
+                      {method.personas?.length > 0 && (
+                        <PersonaOutcomes personas={method.personas} />
                       )}
                       <InterviewMockup interviews={method.interviews} />
                       <ChallengeCards items={method.findings} />
@@ -237,7 +244,10 @@ export default function CaseStudyTemplate({ project }) {
                     <ImageGrid images={[designProcess.wireframingImages[0]]} alt="Wireframing" />
                   )}
                   {designProcess.wireframingImages?.length > 1 && (
-                    <ImageGrid images={designProcess.wireframingImages.slice(1)} alt="Wireframing detail" />
+                    <div className={styles.subBlock}>
+                      <h4 className={styles.subHeading}>Low-Fidelity</h4>
+                      <ImageGrid images={designProcess.wireframingImages.slice(1)} alt="Low-fidelity wireframes" />
+                    </div>
                   )}
                 </div>
               )}
@@ -248,6 +258,18 @@ export default function CaseStudyTemplate({ project }) {
                   {designProcess.explorationsImages?.length > 0 && (
                     <ImageGrid images={designProcess.explorationsImages} alt="Explorations" />
                   )}
+                </div>
+              )}
+              {designProcess.annotatedScreens?.length > 0 && (
+                <div className={styles.subBlock}>
+                  <h3 className={styles.subHeading}>Annotated Final Screens</h3>
+                  <AnnotatedScreens items={designProcess.annotatedScreens} />
+                </div>
+              )}
+              {designProcess.edgeCases?.length > 0 && (
+                <div className={styles.subBlock}>
+                  <h3 className={styles.subHeading}>Edge Cases & Accessibility Considerations</h3>
+                  <ChallengeCards items={designProcess.edgeCases} />
                 </div>
               )}
             </section>

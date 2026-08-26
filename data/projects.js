@@ -77,26 +77,28 @@ const projects = [
     tags: ["UX Research", "Wireframing", "Figma"],
     tool: "Figma",
     year: "2025",
-    figmaUrl: "https://figma.com/file/PLACEHOLDER",
+    figmaUrl:
+      "https://www.figma.com/design/MMOSFW6HE6jHX6TfjnKClM/Algoa-Bus-Redesign?node-id=27-269&t=VNGi1IopnjAKWTdu-1",
     liveUrl: null,
     repoUrl: null,
 
-    // Working example of the full case-study data shape.
-    // Every field here is placeholder copy — swap in the real content.
     caseStudy: {
       years: "2025",
       heroImage: "/projects/trip-2.png",
 
       overview: {
-        role: "Self-directed UX/UI redesign",
+        role: "Self-directed UX/UI redesign + frontend development",
         type: "Speculative case study",
         responsibilities: [
           "User Research",
           "Wireframing",
-          "Prototyping",
-          "Visual Design",
+          "UI design",
+          "Development",
         ],
         timeline: "5 months",
+        tools: "Figma, Next.js",
+        outcome:
+          "Live journey-planner prototype focused on search, routes, times & fares",
         body: "This case study explores the redesign of the Algoa Bus website, a public transport service that plays a vital role in helping people travel across Port Elizabeth (Gqeberha). The project was driven by a simple challenge: while the buses are widely used, finding reliable information about routes, schedules, and fares online is unnecessarily difficult. Through user research and a mobile-first UX approach, the redesign creates a clearer, more intuitive journey-planning experience for commuters, making public transport easier to understand and more accessible for both existing and first-time users.",
       },
 
@@ -168,6 +170,24 @@ const projects = [
       research: {
         intro:
           "I combined competitor analysis, commuter interviews, and personal experience to uncover the biggest barriers preventing people from confidently using Algoa Bus.",
+        stats: {
+          sampleSize: "N = 6",
+          sampleLabel: "Commuters interviewed in Gqeberha",
+          items: [
+            {
+              value: "100%",
+              label: "relied on offline or word-of-mouth info to plan a trip",
+            },
+            {
+              value: "66%",
+              label: "avoided new routes for fear of getting stranded",
+            },
+            {
+              value: "0%",
+              label: "found working timetables on algoabus.co.za",
+            },
+          ],
+        },
         methods: [
           {
             heading: "Market Insights & Competitor Analysis",
@@ -181,7 +201,7 @@ const projects = [
           },
           {
             heading: "Usability Interviews",
-            body: "I spoke with local commuters to learn how they plan journeys and why many avoid using Algoa Bus for unfamiliar destinations.",
+            body: "I conducted 1-on-1 interviews with 3 daily commuters in Gqeberha to learn how they plan journeys and why many avoid using Algoa Bus for unfamiliar destinations.",
             interviews: [
               {
                 conversation: [
@@ -256,7 +276,20 @@ const projects = [
           {
             heading: "User Personas",
             body: "Based on real user research, this persona highlights the motivations and pain points that shaped the redesign of the Algoa Bus experience.",
-            images: ["/projects/Thando.png", "/projects/Zola.png"],
+            personas: [
+              {
+                name: "Thando",
+                image: "/projects/Thando.png",
+                designOutcome:
+                  "Thando's biggest frustration was not knowing when her bus would arrive, calling it ‘gambling with my time.’ To close that gap, the redesign surfaces route, time, and fare together on one results screen — giving her a clear answer before she leaves home instead of relying on guesswork.",
+              },
+              {
+                name: "Zola",
+                image: "/projects/Zola.png",
+                designOutcome:
+                  "Zola needs flexible, reliable transport across several destinations — home, campus, and fieldwork sites — not just one familiar trip. The search-based journey planner and stop-by-stop timeline let him confidently plan any route on demand, rather than defaulting to the one route he already knows.",
+              },
+            ],
           },
         ],
       },
@@ -271,6 +304,51 @@ const projects = [
           "/projects/wireframes.png",
           "/projects/hero-wireframes.png",
           "/projects/table-yadika.png",
+        ],
+
+        explorations:
+          "Before settling on the final homepage, I explored four different directions with fellow UI/UX designers to see which one actually got a commuter to their route fastest. Some leaned into brand storytelling and the bus-hire service, others led with the smart card and payment flow, and one buried route planning a click behind a 'Plan your route' card. The direction that won puts a working From/To search bar directly in the hero — no extra navigation required — because it was the only version that matched what research showed commuters actually needed first: a way to search their trip immediately, not browse the brand.",
+        explorationsImages: [
+          "/projects/explore-1.png",
+          "/projects/explore-2.png",
+          "/projects/explore-3.png",
+          "/projects/explore-4.png",
+        ],
+
+        annotatedScreens: [
+          {
+            title: "Search-first, not browse-first",
+            text: "Research showed commuters had no way to search a specific trip — they relied on word-of-mouth or a call to the depot instead. The final home screen leads with a working From/To search bar rather than a list of routes to browse, because search matches how a commuter actually thinks about a trip: 'I need to get from A to B,' not 'which route number is that.'",
+            image: "/projects/decision1.png",
+          },
+          {
+            title: "A stop-by-stop timeline, not a static list",
+            text: "Once a route is selected, results show a dotted timeline connecting each stop to its scheduled time, instead of a plain list. This lets a rider — especially a first-time one — see at a glance how far into the trip they are and what's still ahead, giving them the same mental map of the route that a daily commuter already has for the one route they trust.",
+            image: "/projects/decision2.png",
+          },
+          {
+            title: "Browsing stays a fallback, not the front door",
+            text: "Browsing by suburb is still available for commuters who don't yet know exactly where they're going, but it sits beneath the search results rather than replacing them. Making search the default and browsing the fallback — instead of the other way around, like the original site — means commuters no longer have to already know the system to use it.",
+            image: "/projects/decision3.png",
+          },
+        ],
+
+        edgeCases: [
+          {
+            icon: "📶",
+            boldLabel: "Low Data & Poor Signal.",
+            text: "Optimized lightweight mobile layouts with offline caching for stop timetables on low-tier data plans.",
+          },
+          {
+            icon: "🔔",
+            boldLabel: "Route Disruptions & Delays.",
+            text: "Clear status alerts embedded directly into trip result cards for delays or altered holiday schedules.",
+          },
+          {
+            icon: "♿",
+            boldLabel: "Accessible Inputs.",
+            text: "High-contrast touch targets for search fields and accessible table layouts for screen readers navigating stop sequences.",
+          },
         ],
       },
 
@@ -310,34 +388,89 @@ const projects = [
   },
   {
     slug: "chef-gpt-uiux-case-study",
-    title: "ChefGPT - Recipe Application",
+    title:
+      "Making \"What's for dinner?\" the easiest question of the day.",
     category: "design",
     tagline:
-      "Placeholder tagline — a fresh ordering flow for a local souvlaki spot",
+      "Placeholder tagline — replace with a one-line description of ChefGPT.",
     description: "Placeholder 1-2 sentence card summary.",
     image: "/projects/chef.png",
     tags: ["UX Research", "Branding", "Figma"],
     tool: "Figma",
     year: "2025",
-    problem: "Placeholder: what was broken/missing before the redesign.",
-    process: [
-      {
-        label: "Research",
-        image: "/public/projects/chef-research.png",
-      },
-      {
-        label: "Wireframes",
-        image: "/projects/design-placeholder-wireframes-2.png",
-      },
-      {
-        label: "High-fidelity",
-        image: "/projects/design-placeholder-hifi-2.png",
-      },
-    ],
-    outcome: "Placeholder: result / what you learned.",
     figmaUrl: "https://figma.com/file/PLACEHOLDER",
     liveUrl: null,
     repoUrl: null,
+
+    // Scaffold only — same shape as the Algoa Bus case study.
+    // Every field here is placeholder copy; swap in the real content section by section.
+    caseStudy: {
+      years: "2025",
+      heroImage: "/projects/chef.png",
+
+      overview: {
+        role: "Placeholder — e.g. UX/UI Designer",
+        type: "Speculative case study",
+        responsibilities: ["UX Research", "Branding", "Prototyping"],
+        timeline: "Placeholder — e.g. 4 weeks",
+        body: "Placeholder overview. Replace with a short paragraph on what ChefGPT is, who it's for, and the core problem the redesign solves.",
+      },
+
+      challenge: {
+        eyebrow: "The Problem",
+        headline: "Placeholder headline — the core problem in one line.",
+        pinpointingIssues: [
+          {
+            icon: "🍳",
+            boldLabel: "Placeholder issue one.",
+            text: "Replace with a real pain point uncovered in research.",
+          },
+          {
+            icon: "📱",
+            boldLabel: "Placeholder issue two.",
+            text: "Replace with a real pain point uncovered in research.",
+          },
+        ],
+      },
+
+      solution: {
+        eyebrow: "The Solution",
+        headline: "Placeholder headline — the core solution in one line.",
+        highlights: [
+          {
+            title: "Placeholder feature one.",
+            text: "Replace with a real solution highlight.",
+          },
+          {
+            title: "Placeholder feature two.",
+            text: "Replace with a real solution highlight.",
+          },
+        ],
+      },
+
+      research: {
+        intro:
+          "Placeholder — describe the research methods used (interviews, competitor analysis, etc.).",
+        methods: [],
+      },
+
+      designProcess: {
+        tools: "Figma",
+        designReview:
+          "Placeholder — how designs were reviewed and iterated on.",
+      },
+
+      finalDesigns: {},
+
+      developerHandoff: {
+        body: "Placeholder — add if this project shipped to code.",
+      },
+
+      reflections: {
+        keyTakeaways: [],
+        nextSteps: [],
+      },
+    },
   },
 ];
 

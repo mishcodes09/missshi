@@ -38,6 +38,10 @@
   line-height: 1.7;
 }
 
+.ctaWrap {
+  align-self: flex-start;
+}
+
 .pillList {
   display: flex;
   flex-wrap: wrap;
