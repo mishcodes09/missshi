@@ -4,17 +4,12 @@ import PrototypeCTA from "./PrototypeCTA";
 export default function OverviewGrid({ overview, prototypeUrl }) {
   if (!overview) return null;
 
-  const { role, type, responsibilities, timeline, tools, outcome, body } = overview;
+  const { role, type, team, responsibilities, timeline, tools, outcome, body } = overview;
 
   const rows = [
     { label: "Role", value: role && <p className={styles.primary}>{role}</p> },
     { label: "Type", value: type && <p className={styles.primary}>{type}</p> },
-    {
-      label: "Responsibilities",
-      value: responsibilities?.length > 0 && (
-        <PillList items={responsibilities} />
-      ),
-    },
+    { label: "Team", value: team && <p className={styles.primary}>{team}</p> },
     {
       label: "Timeline",
       value: timeline && <p className={styles.primary}>{timeline}</p>,
@@ -24,6 +19,12 @@ export default function OverviewGrid({ overview, prototypeUrl }) {
       value: tools && <p className={styles.primary}>{tools}</p>,
     },
     {
+      label: "Responsibilities",
+      value: responsibilities?.length > 0 && (
+        <PillList items={responsibilities} />
+      ),
+    },
+    {
       label: "Outcome",
       value: outcome && <p className={styles.primary}>{outcome}</p>,
     },
@@ -31,7 +32,9 @@ export default function OverviewGrid({ overview, prototypeUrl }) {
       label: "Overview",
       value: body && (
         <>
-          <p className={styles.body}>{body}</p>
+          {body.split(/\n\s*\n/).map((paragraph, i) => (
+            <p key={i} className={styles.body}>{paragraph}</p>
+          ))}
           {prototypeUrl && (
             <div className={styles.ctaWrap}>
               <PrototypeCTA url={prototypeUrl} />

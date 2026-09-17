@@ -94,7 +94,6 @@ export default function CaseStudyTemplate({ project }) {
         <div className={styles.mainContent}>
           {overview && (
             <section id="overview" className={styles.section}>
-              <h2 className={styles.sectionHeading}>Overview</h2>
               <OverviewGrid overview={overview} prototypeUrl={finalDesigns?.prototypeUrl} />
 
               <div className={styles.links} aria-label="Project links">

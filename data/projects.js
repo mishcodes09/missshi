@@ -388,12 +388,12 @@ const projects = [
   },
   {
     slug: "chef-gpt-uiux-case-study",
-    title:
-      "Making \"What's for dinner?\" the easiest question of the day.",
+    title: 'Making "What\'s for dinner?" the easiest question of the day.',
     category: "design",
     tagline:
-      "Placeholder tagline — replace with a one-line description of ChefGPT.",
-    description: "Placeholder 1-2 sentence card summary.",
+      "Designing an AI-powered recipe experience for Android that starts with what’s already in the fridge.",
+    description:
+      "Designing an AI-powered recipe experience for Android that starts with what’s already in the fridge.",
     image: "/projects/chef.png",
     tags: ["UX Research", "Branding", "Figma"],
     tool: "Figma",
@@ -409,16 +409,26 @@ const projects = [
       heroImage: "/projects/chef.png",
 
       overview: {
-        role: "Placeholder — e.g. UX/UI Designer",
-        type: "Speculative case study",
-        responsibilities: ["UX Research", "Branding", "Prototyping"],
-        timeline: "Placeholder — e.g. 4 weeks",
-        body: "Placeholder overview. Replace with a short paragraph on what ChefGPT is, who it's for, and the core problem the redesign solves.",
+        role: "UX/UI Designer (end-to-end mobile experience)",
+        type: "Shipped product · Team project",
+        team: "4-person product team",
+        timeline: "Design ~1 month · Full build 2 Oct – 18 Nov 2025 (~7 weeks)",
+        tools: "Figma · Kotlin / Jetpack Compose · Firebase",
+        responsibilities: [
+          "Full user flows",
+          "High-fidelity screens",
+          "Design system",
+          "UI & localisation integration support",
+        ],
+        outcome:
+          "My concept was selected over a competing interface in internal review and shipped to production.",
+        body: "ChefGPT is an AI-powered recipe app for Android that helps home cooks turn the ingredients they already have into recipes worth making. Built with Kotlin and Jetpack Compose, it combines AI-generated recipe suggestions with core cooking-companion features — ingredient-based search, saved favourites, shopping lists, and meal planning — all backed by Firebase for authentication and cloud storage.\n\nI led the UX/UI design for the full mobile experience, from early flows through high-fidelity screens and a reusable design system, then stayed involved through UI integration and localisation during the build so design intent survived into the final product.",
       },
 
       challenge: {
         eyebrow: "The Problem",
-        headline: "Placeholder headline — the core problem in one line.",
+        headline: "Every great meal starts with a problem.",
+        body: "People don’t struggle to find recipes — they struggle to decide what to cook with what they already have. Most home cooks who enjoy cooking hit the same wall regularly: they open the fridge, see a handful of ingredients, and have no idea what to make with them.",
         pinpointingIssues: [
           {
             icon: "🍳",
